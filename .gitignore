@@ -1,0 +1,8 @@
+/Intermediate/**
+/DerivedDataCache/**
+/Saved/**
+/.vs/**
+
+# Binary Files
+Binaries/*
+Plugins/*/Binaries/*
