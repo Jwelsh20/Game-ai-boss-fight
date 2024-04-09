@@ -362,7 +362,6 @@ void UGASpatialComponent::EvaluateLayer(const FFunctionLayer& Layer, FGAGridMap 
 	FVector StartPoint = OwnerPawn->GetActorLocation();
 	FVector End = PlayerPawn->GetActorLocation();
 	
-
 	//UGAPathComponent* nonConstPathComponent = const_cast<UGAPathComponent*>(pathComponent);
 
 	for (int32 Y = GridMap.GridBounds.MinY; Y < GridMap.GridBounds.MaxY; Y++)
