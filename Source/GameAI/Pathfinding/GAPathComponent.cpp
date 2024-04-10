@@ -298,7 +298,10 @@ FVector UGAPathComponent::GetRandomAccessiblePosition()
 	const AGAGridActor* Grid = GetGridActor();
 	FVector CurrentLocation = GetOwnerPawn()->GetActorLocation();
 
-	while (true) {
+	int maxAttempts = 1000;
+	int attempt = 0;
+
+	while (attempt < maxAttempts) {
 		int32 RandomX = FMath::RandRange(CurrentLocation.X - 2000, CurrentLocation.X + 2000);
 		int32 RandomY = FMath::RandRange(CurrentLocation.Y - 2000, CurrentLocation.Y + 2000);
 
@@ -309,6 +312,7 @@ FVector UGAPathComponent::GetRandomAccessiblePosition()
 		if (Grid->GetCellData(CellRef) == ECellData::CellDataTraversable) {
 			return Candidate;
 		}
+		attempt++;
 	}
 
 	return FVector();
