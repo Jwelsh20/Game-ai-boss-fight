@@ -78,6 +78,9 @@ class UGAPathComponent : public UActorComponent
 	// Destination ------------------------
 
 	UFUNCTION(BlueprintCallable)
+	FVector GetRandomAccessiblePosition();
+
+	UFUNCTION(BlueprintCallable)
 	EGAPathState SetDestination(const FVector &DestinationPoint);
 
 	UPROPERTY(BlueprintReadOnly)
