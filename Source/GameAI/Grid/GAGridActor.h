@@ -120,7 +120,7 @@ public:
 	// Get the world position of the center of the given cell
 	FVector GetCellPosition(const FCellRef& CellRef) const;
 
-	// Get the grid-space position of the center of the given cell
+ 	// Get the grid-space position of the center of the given cell
 	// Note, grid-space is a bit of a weird idea.
 	// In actor space, (0, 0) is the center of the grid
 	// In grid space, (0, 0) is the "top left" corner of the grid, i.e. min corner of the (0, 0) cell
