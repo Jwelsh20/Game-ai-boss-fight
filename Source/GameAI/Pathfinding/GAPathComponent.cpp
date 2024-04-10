@@ -298,7 +298,7 @@ FVector UGAPathComponent::GetRandomAccessiblePosition()
 	const AGAGridActor* Grid = GetGridActor();
 	FVector CurrentLocation = GetOwnerPawn()->GetActorLocation();
 
-	int maxAttempts = 1000;
+	int maxAttempts = 10000;
 	int attempt = 0;
 
 	while (attempt < maxAttempts) {
