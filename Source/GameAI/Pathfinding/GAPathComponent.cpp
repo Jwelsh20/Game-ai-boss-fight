@@ -268,7 +268,7 @@ EGAPathState UGAPathComponent::AStar()
 		//Steps[0].Set(FVector2D(Destination), DestinationCell);
 
 		//I was originially pointing the robot in the direction of the player, but that was causing some edge case issues if the robot got too close to the edge and would end up in an untraversible cell. Now the robot will just stop moving in this event.
-	}
+	} 
 
 	return GAPS_Active;
 }
@@ -293,6 +293,26 @@ void UGAPathComponent::FollowPath()
 }
 
 
+FVector UGAPathComponent::GetRandomAccessiblePosition()
+{
+	const AGAGridActor* Grid = GetGridActor();
+	FVector CurrentLocation = GetOwnerPawn()->GetActorLocation();
+
+	while (true) {
+		int32 RandomX = FMath::RandRange(CurrentLocation.X - 2000, CurrentLocation.X + 2000);
+		int32 RandomY = FMath::RandRange(CurrentLocation.Y - 2000, CurrentLocation.Y + 2000);
+
+		FVector Candidate = FVector(RandomX, RandomY, CurrentLocation.Z);
+
+		FCellRef CellRef = Grid->GetCellRef(Candidate);
+
+		if (Grid->GetCellData(CellRef) == ECellData::CellDataTraversable) {
+			return Candidate;
+		}
+	}
+
+	return FVector();
+}
 
 EGAPathState UGAPathComponent::SetDestination(const FVector &DestinationPoint)
 {
