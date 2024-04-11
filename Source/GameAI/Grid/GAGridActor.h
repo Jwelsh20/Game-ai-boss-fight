@@ -115,7 +115,7 @@ public:
 	// If bClamp = true, then any point outside of the grid will be clamped to the bounds of the grid
 	// Otherwise, if the point is outside the grid, it will return FCellRef::Invalid
 	UFUNCTION(BlueprintCallable)
-	FCellRef GetCellRef(const FVector& Point, bool bClamp = false) const;
+	FCellRef GetCellRef(const FVector& Point, bool bClamp = true) const;
 
 	// Get the world position of the center of the given cell
 	FVector GetCellPosition(const FCellRef& CellRef) const;
