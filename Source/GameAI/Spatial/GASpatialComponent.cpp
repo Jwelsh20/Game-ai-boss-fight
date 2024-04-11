@@ -22,7 +22,7 @@ using namespace std;
 UGASpatialComponent::UGASpatialComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	SampleDimensions = 8000.0f;		// should cover the bulk of the test map
+	SampleDimensions = 20000.0f;		// should cover the bulk of the test map
 }
 
 
